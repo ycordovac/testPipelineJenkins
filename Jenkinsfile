@@ -25,7 +25,7 @@ pipeline {
                     if      (s.GIT_URL != null) print s.GIT_URL
                     else if (s.SVN_URL != null) print s.SVN_URL
                     else print s*/
-                    println scm.userRemoteConfigs[0].url
+                    println gitUtility.getGitUrlRepositoryUnderPipeline()
                 }
             }
         }
