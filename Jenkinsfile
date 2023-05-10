@@ -20,7 +20,10 @@ pipeline {
                     // GIT_REPO_URL = sh(returnStdout: true, script: command).trim();
                     // echo "Detected Git Repo URL: ${GIT_REPO_URL}" 
                     // println(scm.userRemoteConfigs[0].url)
-                    println(${env.GIT_URL})
+                    def s = checkout scm;
+                    if      (s.GIT_URL != null) print s.GIT_URL
+                    else if (s.SVN_URL != null) print s.SVN_URL
+                    else print s
                 }
             }
         }
