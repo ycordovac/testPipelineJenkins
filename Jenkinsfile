@@ -14,9 +14,9 @@ pipeline {
                     // def gitUrl = git.lsRemote("--get-url", "origin").trim()
                     GIT_REPO_URL = null
                     command = "grep -oP '(?<=url>)[^<]+' /var/jenkins_home/jobs/${JOB_NAME}/config.xml"
-                    sh "cd /var/jenkins_home/jobs/${JOB_NAME}"
-                    sh 'pwd'
-                    sh 'ls -la'
+                    sh "cat /var/jenkins_home/jobs/${JOB_NAME}/config.xm"
+                    // sh 'pwd'
+                    // sh 'ls -la'
                     GIT_REPO_URL = sh(returnStdout: true, script: command).trim();
                     echo "Detected Git Repo URL: ${GIT_REPO_URL}" 
                     //println(scm.userRemoteConfigs[0].url)
