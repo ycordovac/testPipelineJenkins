@@ -12,14 +12,15 @@ pipeline {
                     // def gitTool = tool 'git'
                     // def git = gitTool.getGit()
                     // def gitUrl = git.lsRemote("--get-url", "origin").trim()
-                    sh "cat /var/jenkins_home/jobs/getbranchTest/config.xml"
+                    // sh "cat /var/jenkins_home/jobs/getbranchTest/config.xml"
                     // GIT_REPO_URL = null
                     // command = "grep -oP '(?<=url>)[^<]+' /var/jenkins_home/jobs/${JOB_NAME}/config.xml"
                     // // sh 'pwd'
                     // // sh 'ls -la'
                     // GIT_REPO_URL = sh(returnStdout: true, script: command).trim();
                     // echo "Detected Git Repo URL: ${GIT_REPO_URL}" 
-                    //println(scm.userRemoteConfigs[0].url)
+                    // println(scm.userRemoteConfigs[0].url)
+                    println(${env.GIT_URL})
                 }
             }
         }
