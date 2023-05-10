@@ -12,7 +12,7 @@ pipeline {
                     // def gitTool = tool 'git'
                     // def git = gitTool.getGit()
                     // def gitUrl = git.lsRemote("--get-url", "origin").trim()
-                    println(scm)
+                    println(scm.toString())
                 }
             }
         }
