@@ -26,6 +26,7 @@ pipeline {
                     else if (s.SVN_URL != null) print s.SVN_URL
                     else print s*/
                     println gitUtility.getGitUrlRepositoryUnderPipeline()
+                    println gitUtility.getGitBranchUnderPipeline()
                 }
             }
         }
